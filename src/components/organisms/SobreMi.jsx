@@ -1,5 +1,6 @@
 import { Avatar, Typography, Space } from 'antd';
 import miFoto from '../../assets/Avatar.jpg';
+import Titulo from "../atoms/Titulo.jsx";
 
 const { Title, Paragraph } = Typography;
 
@@ -18,7 +19,7 @@ const SobreMi = () => {
                     }}
                 />
 
-                <Title level={1} style={{ color: '#54465e', margin: 0 }}>Sobre Mí</Title>
+                <Titulo text="Sobre Mí" />
                 <Title level={4} style={{ color: '#afadaa', marginTop: '8px', fontWeight: 'normal' }}>
                     Analista Programador
                 </Title>
