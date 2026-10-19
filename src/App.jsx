@@ -1,122 +1,41 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { Layout, Typography } from 'antd';
+import './App.css';
+import SobreMi from "./components/organisms/SobreMi.jsx" ;
 
 function App() {
-  const [count, setCount] = useState(0)
+    const { Header, Footer, Content } = Layout;
+    const { Title } = Typography;
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    return (
+        <Layout style={{minHeight: '100vh', backgroundColor: '#f5f4f4'}}>
+            <Header style={{backgroundColor: '#d1c5d9', color: '#54465e', padding: '0 24px', height: '64px', display: 'flex', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',}}>
+                <b>Sobre Mí/Experiencia Laboral/Estudios/Desarrollos y Proyectos/Contacto</b>
+            </Header>
 
-      <div className="ticks"></div>
+            <Content style={{padding: '24px', flex: 1, color: '#afadaa'}}>
+                <SobreMi />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+                <Title style={{color: '#54465e'}}>Experiencia Laboral</Title>
+                no tengo xd poner una frase tipo: esperando que me contraten y un mini juego muuy facil de programar.
+                <Title style={{color: '#54465e'}}>Estudios</Title>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+                <Title style={{color: '#54465e'}}>Desarrollos y Proyectos</Title>
+                Poner cómo un cosito que muestre proyecto por proyecto, tipo en barrido (Fullstack java, BackEnd, FrontEnt y BD),
+                avanzar al siguiente proyecto y demás.
+                <Title style={{color: '#54465e'}}>Contacto</Title>
+                Hacer el fondo más lindo
+            </Content>
+
+            <Footer style={{textAlign: 'center', backgroundColor: '#252525', color: '#80817e', padding: '20px 0'}}>
+                © 2014-2023 MoureDev by Brais Moure v3. Building software with ♥ from Galicia to the world.
+                | Política de privacidad
+                <br></br>
+                Debe incluir información dinámica (año actual calculado mediante código), derechos
+                de autor e información breve de contacto.
+            </Footer>
+        </Layout>
+    );
 }
 
-export default App
+export default App;
