@@ -1,80 +1,113 @@
-import { Row, Col, Card, Typography, Button } from 'antd';
-import { GithubOutlined, GlobalOutlined } from '@ant-design/icons';
+// src/components/organisms/Proyectos.jsx
+import { Typography, Tag, Button, Carousel } from 'antd';
+import { LeftOutlined, RightOutlined, GithubOutlined, GlobalOutlined } from '@ant-design/icons';
 import Titulo from "../atoms/Titulo.jsx";
+import DecoHogar from '../../assets/DecoHogar.png'
+import TechStore from '../../assets/TechStore.png'
+import Instrumentum from '../../assets/Instrumentum.png'
 
-const { Meta } = Card;
-const { Paragraph } = Typography;
+const { Paragraph, Title } = Typography;
 
 const proyectosData = [
     {
         id: 1,
-        titulo: 'Pato nose q',
-        descripcion: 'Mi sitio web personal construido con React, Vite y Ant Design.',
-        imagen: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop', // URL de ejemplo
-        linkGithub: 'https://github.com/vicbustosf',
-        linkDemo: 'https://tu-portafolio.com'
+        titulo: 'DecoHogar',
+        descripcion: 'Tienda online dedicada a la decoración del hogar, con carrito de compras, registro e inicio de sesión y blogs enfocados en decoración.',
+        imagen: DecoHogar,
+        linkGithub: 'https://github.com/ostavolari/Evaluacion_Parcial_1-CASO-5_TIENDA_DECOHOGAR.git',
+        tags: ['Fullstack', 'HTML5', 'Javascript'],
     },
     {
         id: 2,
-        titulo: 'DecoHogar',
-        descripcion: 'Tienda online con carrito de compras y pasarela de pagos.',
-        imagen: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=600&auto=format&fit=crop',
-        linkGithub: 'https://github.com/ostavolari/Evaluacion_Parcial_1-CASO-5_TIENDA_DECOHOGAR.git',
-        linkDemo: '#'
+        titulo: 'TechStore',
+        descripcion: 'Gestor de productos. Parte de un microservicio desarrollado con Java SpringBoot para una tienda ficticia llamada "TeachStore".',
+        imagen: TechStore,
+        linkGithub: 'https://github.com/JaePewu/techstore.git',
+        tags: ['Backend', 'Java', 'Base de Datos']
     },
     {
         id: 3,
-        titulo: 'TechStore',
-        descripcion: 'Panel de control para visualización de datos en tiempo real.',
-        imagen: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop',
-        linkGithub: 'https://github.com/JaePewu/techstore.git',
-        linkDemo: '#'
+        titulo: 'Instrumentum',
+        descripcion: 'Plataforma de gestión integral de equipamiento técnico para músicos y bandas.',
+        imagen: Instrumentum,
+        linkGithub: 'https://github.com/vicbustosf/Instrumentum_Bustos_Tavolari_010D.git',
+        tags: ['Backend', 'Fullstack', 'Java']
     }
 ];
 
 const Proyectos = () => {
+    // Flechas para el carrusel
+    const FlechaIzquierda = ({ onClick }) => (
+        <Button type="text" icon={<LeftOutlined />} onClick={onClick}
+                style={{ position: 'absolute', left: -40, top: '50%', zIndex: 2, color: 'var(--color-texto-principal)' }} />
+    );
+    const FlechaDerecha = ({ onClick }) => (
+        <Button type="text" icon={<RightOutlined />} onClick={onClick}
+                style={{ position: 'absolute', right: -40, top: '50%', zIndex: 2, color: 'var(--color-texto-principal)' }} />
+    );
+
     return (
-        <div style={{ padding: '40px 20px', maxWidth: '1000px', margin: '0 auto' }}>
-            <Titulo text="Desarrollos y Proyectos"  />
+        <div id="proyectos" style={{ padding: '40px 0', position: 'relative' }}>
+            <Titulo text="Desarrollos y Proyectos" />
 
-            {/* Galería usando Row y Col */}
-            <Row gutter={[24, 24]} style={{ marginTop: '24px' }}>
+            <div style={{ padding: '0 40px' }}> {/* Espacio para las flechas */}
+                <Carousel
+                    arrows={true}
+                    prevArrow={<FlechaIzquierda />}
+                    nextArrow={<FlechaDerecha />}
+                    style={{ marginTop: '24px' }}
+                >
+                    {proyectosData.map((proyecto) => (
+                        <div key={proyecto.id}>
+                            <div style={{
+                                backgroundColor: 'var(--color-fondo-secundario)',
+                                border: '1px solid var(--color-borde)',
+                                borderRadius: '16px',
+                                padding: '24px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '16px'
+                            }}>
+                                <img src={proyecto.imagen} alt={proyecto.titulo} style={{ width: '100%', height: '250px', objectFit: 'cover', borderRadius: '12px' }} />
+                                <Title level={4} style={{ color: 'var(--color-texto-principal)', margin: 0 }}>{proyecto.titulo}</Title>
+                                <Paragraph style={{ color: 'var(--color-texto-secundario)', margin: 0 }}>{proyecto.descripcion}</Paragraph>
 
-                {proyectosData.map((proyecto) => (
-                    <Col xs={24} sm={12} md={8} key={proyecto.id}>
+                                {/* Tags estilo Brittany */}
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '8px' }}>
+                                    {proyecto.tags.map((tag) => (
+                                        <Tag
+                                            key={tag}
+                                            style={{
+                                                backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                                                color: 'var(--color-primario)',
+                                                border: 'none',
+                                                borderRadius: '20px',
+                                                padding: '4px 12px',
+                                                fontWeight: 500,
+                                                fontSize: '13px'
+                                            }}
+                                        >
+                                            {tag}
+                                        </Tag>
+                                    ))}
+                                </div>
 
-                        <Card
-                            hoverable // Efecto al pasar el mouse
-                            cover={
-                                <img
-                                    alt={proyecto.titulo}
-                                    src={proyecto.imagen}
-                                    style={{ height: '200px', objectFit: 'cover' }}
-                                />
-                            }
-                            actions={[
-                                // Boton de acción en la parte inferior de la tarjeta
-                                <Button type="link" icon={<GithubOutlined />} href={proyecto.linkGithub} target="_blank"></Button>,
-                            ]}
-                            style={{ borderRadius: '12px', overflow: 'hidden' }}
-                        >
-                            <Meta
-                                title={<span style={{ color: '#54465e' }}>{proyecto.titulo}</span>}
-                                description={
-                                    <Paragraph style={{ color: '#afadaa', margin: 0 }}>
-                                        {proyecto.descripcion}
-
-                                        Poner cómo un cosito que muestre proyecto por proyecto, tipo en barrido (Fullstack java, BackEnd, FrontEnt y BD),
-                                        avanzar al siguiente proyecto y demás.
-                                    </Paragraph>
-                                }
-                            />
-                        </Card>
-
-                    </Col>
-                ))}
-
-            </Row>
+                                <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+                                    <Button
+                                        type="primary"
+                                        icon={<GithubOutlined />}
+                                        href={proyecto.linkGithub}
+                                        target="_blank"
+                                        style={{ backgroundColor: 'var(--color-primario)', borderRadius: '8px' }}
+                                    >
+                                        Repositorio
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </Carousel>
+            </div>
         </div>
     );
 };

@@ -1,33 +1,31 @@
+// src/components/organisms/SobreMi.jsx
 import { Avatar, Typography, Space } from 'antd';
 import miFoto from '../../assets/Avatar.jpg';
-import Titulo from "../atoms/Titulo.jsx";
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 const SobreMi = () => {
     return (
-        <div style={{ textAlign: 'center', padding: '60px 20px', backgroundColor: '#f5f4f4' }}>
-            <Space direction="vertical" size="middle" align="center">
-
+        <div id="sobre-mi" style={{ padding: '20px 0', maxWidth: '400px' }}>
+            <Space direction="vertical" size="middle" align="start">
                 <Avatar
-                    size={150}
+                    size={200}
                     src={miFoto}
                     style={{
-                        backgroundColor: '#d1c5d9',
-                        border: '4px solid #54465e',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+                        border: '4px solid var(--color-primario)',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)'
                     }}
                 />
-
-                <Titulo text="Sobre Mí" />
-                <Title level={4} style={{ color: '#afadaa', marginTop: '8px', fontWeight: 'normal' }}>
-                    Analista Programador
+                <Title level={1} style={{ color: 'var(--color-texto-principal)', margin: '16px 0 0 0' }}>
+                    Sobre Mí
                 </Title>
-
-                <Paragraph style={{ maxWidth: '600px', fontSize: '16px', color: '#54465e' }}>
-                    Hola, soy Victoria Bustos. Me apasiona crear interfaces web accesibles,
-                    funcionales y con un diseño limpio. Aquí encontrarás un poco sobre mi
-                    experiencia y los proyectos en los que he trabajado.
+                <Text style={{ fontSize: '20px', color: 'var(--color-texto-secundario)', fontWeight: 500 }}>
+                    ¡Hola, soy Victoria Bustos!
+                </Text>
+                <Paragraph style={{ fontSize: '16px', color: 'var(--color-texto-principal)', lineHeight: 1.6, marginTop: '16px' }}>
+                    Soy estudiante de la carrera Analista Programador en Duoc UC.
+                    Actualmente estoy aprendiendo y mejorando mis habilidades en el desarrollo frontend.
+                    Aquí encontrarás un poco sobre mi experiencia y los proyectos en los que he trabajado.
                 </Paragraph>
             </Space>
         </div>
