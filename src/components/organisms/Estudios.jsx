@@ -19,9 +19,9 @@ const Estudios = () => {
 
                 {/* Texto a la derecha */}
                 <Col xs={24} md={{ span: 16, order: 2 }}>
-                    <Title level={4} style={{ color: '#54465e', marginTop: 0 }}>Ingeniería en Informática</Title>
+                    <Title level={4} style={{ color: '#54465e', marginTop: 0 }}>Analista programador</Title>
                     <Paragraph style={{ color: '#afadaa', fontSize: '16px' }}>
-                        Universidad de Santiago de Chile (2018 - 2022)
+                        Duoc UC Maipú (2025 - Aún cursando)
                     </Paragraph>
                     <Paragraph style={{ color: '#54465e', fontSize: '16px' }}>
                         Especialización en desarrollo de software y arquitecturas web modernas.

@@ -24,13 +24,13 @@ export const Contacto = () => {
 
                     <Space direction="vertical" size="middle">
                         <Button type="link" icon={<MailOutlined />} style={{ color: '#54465e', padding: 0, fontSize: '16px' }}>
-                            tu-correo@ejemplo.com
+                            vic.bustosf@duocuc.cl
                         </Button>
-                        <Button type="link" icon={<LinkedinOutlined />} href="https://linkedin.com" target="_blank" style={{ color: '#54465e', padding: 0, fontSize: '16px' }}>
-                            linkedin.com/in/tu-perfil
+                        <Button type="link" icon={<LinkedinOutlined />} href="https://www.linkedin.com/in/victoria-bustos-79201b445/?isSelfProfile=true" target="_blank" style={{ color: '#54465e', padding: 0, fontSize: '16px' }}>
+                            linkedin.com/in/victoria-bustos
                         </Button>
-                        <Button type="link" icon={<GithubOutlined />} href="https://github.com" target="_blank" style={{ color: '#54465e', padding: 0, fontSize: '16px' }}>
-                            github.com/tu-usuario
+                        <Button type="link" icon={<GithubOutlined />} href="https://github.com/vicbustosf" target="_blank" style={{ color: '#54465e', padding: 0, fontSize: '16px' }}>
+                            github.com/vicbustosf
                         </Button>
                     </Space>
                 </Col>

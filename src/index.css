@@ -3,3 +3,13 @@ html, body {
   padding: 0;
   height: 100%;
 }
+
+/* Hace que el desplazamiento por anclas sea suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ajusta la posición del scroll para que el header fijo no tape los títulos */
+section[id], div[id] {
+  scroll-margin-top: 80px; /* Ajusta según la altura de tu header */
+}

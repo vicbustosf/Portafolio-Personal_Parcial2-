@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { Layout, Typography } from 'antd';
 import './App.css';
 import SobreMi from "./components/organisms/SobreMi.jsx" ;
 import ExperienciaLaboral from "./components/organisms/ExperienciaLaboral.jsx";

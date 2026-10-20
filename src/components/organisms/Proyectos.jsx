@@ -8,26 +8,26 @@ const { Paragraph } = Typography;
 const proyectosData = [
     {
         id: 1,
-        titulo: 'Portafolio Personal',
+        titulo: 'Pato nose q',
         descripcion: 'Mi sitio web personal construido con React, Vite y Ant Design.',
         imagen: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop', // URL de ejemplo
-        linkGithub: 'https://github.com/tu-usuario',
+        linkGithub: 'https://github.com/vicbustosf',
         linkDemo: 'https://tu-portafolio.com'
     },
     {
         id: 2,
-        titulo: 'E-commerce App',
+        titulo: 'DecoHogar',
         descripcion: 'Tienda online con carrito de compras y pasarela de pagos.',
         imagen: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=600&auto=format&fit=crop',
-        linkGithub: 'https://github.com/tu-usuario',
+        linkGithub: 'https://github.com/ostavolari/Evaluacion_Parcial_1-CASO-5_TIENDA_DECOHOGAR.git',
         linkDemo: '#'
     },
     {
         id: 3,
-        titulo: 'Dashboard Analytics',
+        titulo: 'TechStore',
         descripcion: 'Panel de control para visualización de datos en tiempo real.',
         imagen: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop',
-        linkGithub: 'https://github.com/tu-usuario',
+        linkGithub: 'https://github.com/JaePewu/techstore.git',
         linkDemo: '#'
     }
 ];
@@ -53,13 +53,8 @@ const Proyectos = () => {
                                 />
                             }
                             actions={[
-                                // Botones de acción en la parte inferior de la tarjeta
-                                <Button type="link" icon={<GithubOutlined />} href={proyecto.linkGithub} target="_blank">
-                                    Código
-                                </Button>,
-                                <Button type="link" icon={<GlobalOutlined />} href={proyecto.linkDemo} target="_blank">
-                                    Demo
-                                </Button>
+                                // Boton de acción en la parte inferior de la tarjeta
+                                <Button type="link" icon={<GithubOutlined />} href={proyecto.linkGithub} target="_blank"></Button>,
                             ]}
                             style={{ borderRadius: '12px', overflow: 'hidden' }}
                         >
