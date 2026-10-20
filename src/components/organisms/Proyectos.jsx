@@ -1,13 +1,13 @@
-// src/components/organisms/Proyectos.jsx
 import { Typography, Tag, Button, Carousel } from 'antd';
-import { LeftOutlined, RightOutlined, GithubOutlined, GlobalOutlined } from '@ant-design/icons';
+import { LeftOutlined, RightOutlined, GithubOutlined } from '@ant-design/icons';
 import Titulo from "../atoms/Titulo.jsx";
-import DecoHogar from '../../assets/DecoHogar.png'
-import TechStore from '../../assets/TechStore.png'
-import Instrumentum from '../../assets/Instrumentum.png'
+import DecoHogar from '../../assets/DecoHogar.png';
+import TechStore from '../../assets/TechStore.png';
+import Instrumentum from '../../assets/Instrumentum.png';
 
 const { Paragraph, Title } = Typography;
 
+// Arreglo con los proyectos
 const proyectosData = [
     {
         id: 1,
@@ -36,7 +36,7 @@ const proyectosData = [
 ];
 
 const Proyectos = () => {
-    // Flechas para el carrusel
+    //flechas del carrusel.
     const FlechaIzquierda = ({ onClick }) => (
         <Button type="text" icon={<LeftOutlined />} onClick={onClick}
                 style={{ position: 'absolute', left: -40, top: '50%', zIndex: 2, color: 'var(--color-texto-principal)' }} />
@@ -50,13 +50,14 @@ const Proyectos = () => {
         <div id="proyectos" style={{ padding: '40px 0', position: 'relative' }}>
             <Titulo text="Desarrollos y Proyectos" />
 
-            <div style={{ padding: '0 40px' }}> {/* Espacio para las flechas */}
+            <div style={{ padding: '0 40px' }}>
                 <Carousel
-                    arrows={true}
-                    prevArrow={<FlechaIzquierda />}
+                    arrows={true} // Activamos las flechas
+                    prevArrow={<FlechaIzquierda />} // Le pasamos nuestra flecha personalizada
                     nextArrow={<FlechaDerecha />}
                     style={{ marginTop: '24px' }}
                 >
+                    {/* Recorremos los proyectos y creamos una tarjeta por cada uno */}
                     {proyectosData.map((proyecto) => (
                         <div key={proyecto.id}>
                             <div style={{
@@ -68,20 +69,22 @@ const Proyectos = () => {
                                 flexDirection: 'column',
                                 gap: '16px'
                             }}>
+                                {/* Imagen del proyecto */}
                                 <img src={proyecto.imagen} alt={proyecto.titulo} style={{ width: '100%', height: '250px', objectFit: 'cover', borderRadius: '12px' }} />
+
                                 <Title level={4} style={{ color: 'var(--color-texto-principal)', margin: 0 }}>{proyecto.titulo}</Title>
                                 <Paragraph style={{ color: 'var(--color-texto-secundario)', margin: 0 }}>{proyecto.descripcion}</Paragraph>
 
-                                {/* Tags estilo Brittany */}
+                                {/* Etiquetas de tecnologías */}
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '8px' }}>
                                     {proyecto.tags.map((tag) => (
                                         <Tag
                                             key={tag}
                                             style={{
-                                                backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                                                backgroundColor: 'rgba(139, 92, 246, 0.1)', // Fondo morado transparente
                                                 color: 'var(--color-primario)',
                                                 border: 'none',
-                                                borderRadius: '20px',
+                                                borderRadius: '20px', // Bordes bien redondos
                                                 padding: '4px 12px',
                                                 fontWeight: 500,
                                                 fontSize: '13px'
@@ -92,13 +95,13 @@ const Proyectos = () => {
                                     ))}
                                 </div>
 
+                                {/* Botón GitHub */}
                                 <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
                                     <Button
                                         type="primary"
                                         icon={<GithubOutlined />}
                                         href={proyecto.linkGithub}
-                                        target="_blank"
-                                        style={{ backgroundColor: 'var(--color-primario)', borderRadius: '8px' }}
+                                        target="_blank" // Abre en pestaña nueva
                                     >
                                         Repositorio
                                     </Button>

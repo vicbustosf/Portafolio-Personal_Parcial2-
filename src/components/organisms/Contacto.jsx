@@ -1,4 +1,3 @@
-// src/components/organisms/Contacto.jsx
 import { Row, Col, Typography, Space, Button } from 'antd';
 import { LinkedinOutlined, GithubOutlined, MailOutlined } from '@ant-design/icons';
 import Titulo from "../atoms/Titulo.jsx";

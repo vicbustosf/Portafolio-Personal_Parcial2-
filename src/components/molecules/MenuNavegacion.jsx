@@ -1,4 +1,3 @@
-// src/components/molecules/MenuNavegacion.jsx
 import { Menu } from 'antd';
 
 const MenuNavegacion = () => {
@@ -13,7 +12,7 @@ const MenuNavegacion = () => {
         <Menu
             mode="horizontal"
             items={items}
-            selectable={false} /* Evita que se marque una sección como activa */
+            selectable={false} //Evita que se marque una sección como activa
             style={{
                 backgroundColor: 'transparent',
                 borderBottom: 'none',
@@ -21,8 +20,7 @@ const MenuNavegacion = () => {
                 flex: 1,
                 justifyContent: 'flex-end',
             }}
-            // Forzamos el color del texto usando clases CSS o inline
-            theme="dark"
+            theme="dark" // Forzamos el color del texto usando clases CSS o inline
         />
     );
 };

@@ -1,36 +1,32 @@
-/* src/index.css */
+/* Importamos la fuente Inter de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* --- MODO OSCURO (Por defecto) --- */
 :root {
-  /* MODO OSCURO (Morado Profundo) */
-  --color-fondo: #17111d; /* Morado casi negro, muy elegante */
-  --color-fondo-secundario: #22182c; /* Morado un poco más claro para tarjetas */
-  --color-texto-principal: #f3edf7; /* Blanco con un toque sutil de lila */
-  --color-texto-secundario: #b5a8c1; /* Lila grisáceo para párrafos */
-  --color-primario: #7b5ea7; /* Tu morado estrella */
-  --color-primario-hover: #9d7fc9; /* Morado más claro para hover */
-  --color-borde: #382a47; /* Borde sutil morado */
-
-  --color-header: rgba(23, 17, 29, 0.85);
-  --color-sombra: rgba(0, 0, 0, 0.4);
-
-  --color-error: #ff7b7b; /* Un rojo coral suave para el modo oscuro */
+  --color-fondo: #17111d; /* Morado casi negro */
+  --color-fondo-secundario: #22182c; /* Morado más clarito para las tarjetas */
+  --color-texto-principal: #f3edf7; /* Blanco con toque lila */
+  --color-texto-secundario: #b5a8c1; /* Lila grisáceo */
+  --color-primario: #7b5ea7; /* Morado estrella */
+  --color-primario-hover: #9d7fc9; /* Morado más claro para cuando pasas el mouse */
+  --color-borde: #382a47; /* Borde sutil */
+  --color-header: rgba(23, 17, 29, 0.85); /* Fondo del header con transparencia */
+  --color-sombra: rgba(0, 0, 0, 0.4); /* Sombra de las tarjetas */
+  --color-error: #ff7b7b; /* Rojo suave para errores */
 }
 
+/* --- MODO CLARO (Se activa cambiando el atributo data-theme) --- */
 [data-theme="light"] {
-  /* MODO CLARO (Lila Pálido / Blanco Roto - Nada encandilante) */
-  --color-fondo: #ece8ef; /* Lila muy suave, descansa la vista */
-  --color-fondo-secundario: #f7f5f9; /* Casi blanco pero con tinte lila */
-  --color-texto-principal: #2c1f38; /* Morado muy oscuro para leer bien */
+  --color-fondo: #ece8ef; /* Lila pálido (no encandila) */
+  --color-fondo-secundario: #f7f5f9; /* Casi blanco */
+  --color-texto-principal: #2c1f38; /* Morado oscuro para leer */
   --color-texto-secundario: #645574; /* Morado grisáceo */
-  --color-primario: #7b5ea7; /* Mismo morado para mantener identidad */
+  --color-primario: #7b5ea7;
   --color-primario-hover: #604586;
-  --color-borde: #d8cfdf; /* Borde lila suave */
-
+  --color-borde: #d8cfdf;
   --color-header: rgba(236, 232, 239, 0.85);
   --color-sombra: rgba(123, 94, 167, 0.15);
-
-  --color-error: #d32f2f; /* Un rojo más profundo pero legible para el modo claro */
+  --color-error: #d32f2f;
 }
 
 body {
@@ -38,17 +34,18 @@ body {
   padding: 0;
   background-color: var(--color-fondo);
   color: var(--color-texto-principal);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave al cambiar de tema */
   font-family: 'Inter', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; } /* Hace que el scroll sea suave al hacer clic en el menú */
+
+/* Esto evita que el header tape los títulos cuando haces clic en el menú */
 section[id], div[id] {
-  /* Esto hace que al hacer clic en el menú, la sección quede centrada en la pantalla */
   scroll-margin-top: 20vh;
 }
 
-/* Forzar que los links del menú cambien de color según el tema */
+/* Forzamos a que los links del menú usen nuestros colores */
 .ant-menu-item a {
   color: var(--color-texto-principal) !important;
   transition: color 0.3s ease;
@@ -56,6 +53,7 @@ section[id], div[id] {
 .ant-menu-item a:hover {
   color: var(--color-primario-hover) !important;
 }
+/* Quitamos la línea azul en el header que pone Ant Design por defecto */
 .ant-menu-horizontal > .ant-menu-item::after {
   border-bottom: none !important;
 }

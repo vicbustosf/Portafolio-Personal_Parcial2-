@@ -12,45 +12,53 @@ function App() {
     const { tema } = useTema();
 
     return (
+        // ConfigProvider es como un "control remoto" de Ant Design.
+        // Le pasamos nuestras variables CSS para que los inputs y botones usen nuestros colores.
         <ConfigProvider
             theme={{
+                // Si el tema es 'dark', usa el algoritmo oscuro. Si no, el claro.
                 algorithm: tema === 'dark' ? theme.darkAlgorithm : theme.defaultAlgorithm,
                 token: {
                     colorPrimary: '#7b5ea7',
-                    borderRadius: 8,
-                    fontFamily: 'Inter, sans-serif',
-                    colorBgContainer: 'var(--color-fondo-secundario)',
-                    colorText: 'var(--color-texto-principal)',
-                    colorBorder: 'var(--color-borde)',
-                    colorError: 'var(--color-error)',
+                    borderRadius: 8, // Bordes un poco redondeados
+                    fontFamily: 'Inter, sans-serif', // tipografía
+                    colorBgContainer: 'var(--color-fondo-secundario)', // Fondo de los inputs
+                    colorText: 'var(--color-texto-principal)', // Texto dentro de los inputs
+                    colorBorder: 'var(--color-borde)', // Color de los bordes
+                    colorError: 'var(--color-error)', // Color de los mensajes de error
                 },
             }}
         >
             <VicLayout>
+                {/* Este div es el que arma las dos columnas */}
                 <div style={{
-                    display: 'flex',
-                    gap: '5%',
-                    maxWidth: '1300px',
-                    margin: '0 auto',
-                    padding: '80px 40px',
-                    alignItems: 'flex-start'
-                }}> {/* Columna Isquierda */}
+                    display: 'flex', // Pone los elementos uno al lado del otro
+                    gap: '5%', // Separación entre las columnas
+                    maxWidth: '1300px', // Ancho máximo para que no se estire de más
+                    margin: '0 auto', // Centra todo el bloque en la pantalla
+                    padding: '80px 40px', // Espacio arriba, abajo y a los lados
+                    alignItems: 'flex-start' // Alinea todo al inicio (arriba)
+                }}>
+
+                    {/* COLUMNA IZQUIERDA*/}
                     <div style={{
-                        width: '35%',
-                        position: 'sticky',
-                        top: '120px',
-                        height: 'fit-content'
+                        width: '35%', // Ocupa el 35% del ancho
+                        position: 'sticky', // Hace que se quede fija al hacer scroll
+                        top: '120px', // Se queda pegada a 120px del techo
+                        height: 'fit-content' // Altura justa al contenido
                     }}>
                         <SobreMi />
                     </div>
 
-                    {/* Columna Derecha */}
+                    {/* COLUMNA DERECHA */}
                     <div style={{ width: '60%' }}>
                         <ExperienciaLaboral />
                         <Estudios />
                         <Proyectos />
                     </div>
                 </div>
+
+                {/* El Contacto va afuera del div de columnas para que ocupe todo el ancho */}
                 <Contacto />
             </VicLayout>
         </ConfigProvider>
@@ -58,3 +66,5 @@ function App() {
 }
 
 export default App;
+
+{/* Quería hacer algo dinámico, pero hay muchas cosas que no salieron bien xdd */}

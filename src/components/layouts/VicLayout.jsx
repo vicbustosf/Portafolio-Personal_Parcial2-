@@ -1,10 +1,8 @@
-// src/components/layouts/VicLayout.jsx
 import { Layout } from 'antd';
 import AnnoActual from '../atoms/AnnoActual.jsx';
 import BotonTema from '../atoms/BotonTema.jsx';
 import MenuNavegacion from '../molecules/MenuNavegacion.jsx';
 import { useTema } from '../../hooks/useTema.js';
-import { MailOutlined, LinkedinOutlined, GithubOutlined } from '@ant-design/icons'; // Iconos para el footer
 
 const { Header, Footer, Content } = Layout;
 
@@ -13,8 +11,6 @@ export const VicLayout = ({ children }) => {
 
     return (
         <Layout style={{ minHeight: '100vh', backgroundColor: 'transparent' }}>
-            {/* HEADER FIJO */}
-            // En VicLayout.jsx, el Header debe verse así:
             <Header style={{
                 backgroundColor: 'var(--color-header)',
                 backdropFilter: 'blur(10px)',
@@ -33,12 +29,10 @@ export const VicLayout = ({ children }) => {
                 <BotonTema tema={tema} alternarTema={alternarTema} />
             </Header>
 
-            {/* CONTENIDO - Aquí quitamos el flex para que App.jsx decida el layout */}
             <Content style={{ paddingTop: '64px', flex: 1 }}>
                 {children}
             </Content>
 
-            {/* FOOTER CON ICONOS */}
             <Footer style={{
                 textAlign: 'center',
                 backgroundColor: 'var(--color-fondo-secundario)',

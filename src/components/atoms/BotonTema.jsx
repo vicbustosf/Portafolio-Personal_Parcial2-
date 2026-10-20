@@ -1,4 +1,3 @@
-// src/components/atoms/BotonTema.jsx
 import { Button } from 'antd';
 import { SunOutlined, MoonOutlined } from '@ant-design/icons';
 

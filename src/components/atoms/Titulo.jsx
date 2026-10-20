@@ -1,4 +1,3 @@
-// src/components/atoms/Titulo.jsx
 import { Typography } from 'antd';
 const { Title } = Typography;
 
@@ -6,10 +5,10 @@ const Titulo = ({ text, nivel = 2 }) => {
     return (
         <div style={{
             position: 'sticky',
-            top: '64px', // Justo debajo del header
+            top: '64px',
             zIndex: 10,
             padding: '16px 0',
-            backgroundColor: 'var(--color-fondo)', // Para que el texto de abajo no se vea a través
+            backgroundColor: 'var(--color-fondo)',
             marginBottom: '16px'
         }}>
             <Title
